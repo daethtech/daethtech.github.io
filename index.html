@@ -4,11 +4,34 @@
 <!-- <p>Excells at: Character design, UI/UX, game mechanics design, writing scripts, and sprite animation (in unity).</p>
 <p>Can also do: Voice acting, basic sprite-pixel art, model for motion-capture-animation, and basic sound design.</p> -->
 
+<style>
+    .collapsible {
+      background-color: #777;
+      color: white;
+      cursor: pointer;
+      padding: 18px;
+      width: 70%;
+      border: none;
+      outline: none;
+      font-size: 36px;
+      text-align: center;
+    }
+    
+    .active, .collapsible:hover {
+      background-color: #555;
+    }
+    
+    .content {
+      padding: 18 18px;
+      display: none;
+      overflow: hidden;
+      background-color: #f1f1f1;
+      text-align: center;
+    }
 
-
-
+</style>
 <hr>
-<div style="max-width: 1000px;
+<div style="max-width: 1500;
 background-color: #e5d8f9;
 border: 1px solid #ddd;
 text-align: center;
@@ -44,12 +67,40 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
 </a>
 </ul>
 <br>
-<img src="Screenshot6.jpg"  width="480" height="270" alt="Tracey and the Magic Brush Screenshot of gameplay">
-<img src="Screenshot2.jpg"  width="480" height="270" alt="Tracey and the Magic Brush Screenshot of gameplay">
-<img src="Screenshot3.jpg"  width="480" height="270" alt="Tracey and the Magic Brush Screenshot of gameplay">
-<img src="Screenshot4.jpg"  width="480" height="270" alt="Tracey and the Magic Brush Screenshot of gameplay">
-<img src="Screenshot5.jpg"  width="480" height="270" alt="Tracey and the Magic Brush Screenshot of gameplay">
-<img src="Promo_Art_16_by_9.jpg"  width="480" height="270" alt="Tracey and the Magic Brush promotional image">
+
+<button type="button" class="collapsible">Game Screenshots</button>
+<div class="content">
+    <img src="Screenshot6.jpg"  width="480" height="270" alt="Tracey and the Magic Brush Screenshot of gameplay">
+    <img src="Screenshot2.jpg"  width="480" height="270" alt="Tracey and the Magic Brush Screenshot of gameplay">
+    <img src="Screenshot3.jpg"  width="480" height="270" alt="Tracey and the Magic Brush Screenshot of gameplay">
+    <img src="Screenshot4.jpg"  width="480" height="270" alt="Tracey and the Magic Brush Screenshot of gameplay">
+    <img src="Screenshot5.jpg"  width="480" height="270" alt="Tracey and the Magic Brush Screenshot of gameplay">
+    <img src="Promo_Art_16_by_9.jpg"  width="480" height="270" alt="Tracey and the Magic Brush promotional image">
+</div>
+<br>
+<hr>
+<button type="button" class="collapsible">Design documents</button>
+<div class="content">
+<img src="TatMB_Concepts0.jpg"  height="500" alt="Tracey and the Magic Brush design page">
+<img src="TatMB_Concepts3.jpg"  height="500" alt="Tracey and the Magic Brush design page">
+<img src="TatMB_Concepts1.jpg"  height="500" alt="Tracey and the Magic Brush design page">
+<img src="TatMB_Concepts4.jpg"  height="500" alt="Tracey and the Magic Brush design page">
+<img src="TatMB_Concepts6.jpg"  height="500" alt="Tracey and the Magic Brush design page">
+<img src="TatMB_Concepts2.jpg"  height="500" alt="Tracey and the Magic Brush intro cutscene storyboard">
+</div>
+<br>
+<hr>
+<button type="button" class="collapsible">Sprites</button>
+<div class="content">
+<img src="Tracey_Idle_p3.png"  height="500" alt="Tracey Lynes Sprite">
+<img src="Tracey_Turned_Around_1.png"  height="500" alt="Tracey Lynes Sprite">
+<img src="Tracey_Fall_concept_1.png"  height="500" alt="Tracey Lynes Sprite">
+<img src="Tracey_JumpSquat_concept_Brighter.png"  height="500" alt="Tracey Lynes Sprite">
+<img src="Tracey_Land_concept_1.png"  height="500" alt="Tracey Lynes Sprite">
+<img src="Tracey_Late_to_Art_Showcase_Dropplets.png"  height="500" alt="Tracey Lynes Sprite">
+<img src="Tracey_walk_concept_L_U.png"  height="500" alt="Tracey Lynes Sprite">
+<img src="Witch_Standing_concept_1_brighter.png"  height="500" alt="Petty Witch Sprite">
+</div>
 <br>
 <br>
 </div>
@@ -94,6 +145,22 @@ src="https://www.youtube.com/embed/s_GIE0LCHJ0?rel=0">
 <iframe frameborder="0" src="https://itch.io/embed/2285150?linkback=true&amp;border_width=3" width="640" height="171"><a href="https://daethtech.itch.io/starspark"></a>EECS 494 P1: StarSpark by daethtech</iframe></ul>
 <br>
 
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+    </script>
 <!-- help -->
 <!-- TIP: Rename this file "index.html", and it will become the default landing page whenever someone navigates their browser to your domain. -->
 </html>
