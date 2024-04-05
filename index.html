@@ -5,7 +5,7 @@
       color: white;
       cursor: pointer;
       padding: 18px;
-      width: 70%;
+      width: 80%;
       border: none;
       outline: none;
       font-size: 36px;
@@ -31,20 +31,36 @@
         top: 0;
         z-index: 99;
     }
+    
+    .collapsible, button {
+        font-size: 64;
+        box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+    }
+
+    embed{
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .section {
+        max-width: 1500;
+        width: 90%;
+        background-color: #f1f1f1;
+        border: 2px solid #ddd;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 15px 15px 5px rgba(0, 0, 0, 0.1);
+        margin: 0 auto;
+    }
 </style>
 
-<h1>The Portfolio of Grant Lawrence Williams (@daethtech)</h1>
+<h1 style="text-align: center; margin: 0 auto;">The Portfolio of Grant Lawrence Williams (@daethtech)</h1>
 <h2><a href="https://www.linkedin.com/in/grantwms"></a></h2>
 <!-- <p>Excells at: Character design, UI/UX, game mechanics design, writing scripts, and sprite animation (in unity).</p>
 <p>Can also do: Voice acting, basic sprite-pixel art, model for motion-capture-animation, and basic sound design.</p> -->
 
 <hr>
-<div style="max-width: 1500;
-background-color: #f1f1f1;
-border: 1px solid #ddd;
-text-align: center;
-border-radius: 5px;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+<div class = "section">
 <!-- <div style="text-align: center;"> -->
 <h1>Independent projects/TCY-Games</h1>
 <!-- <p><a href="https://www.tcygames.com/"><img src="TCY_TM_Small.png" width="250" height="217" alt="TCY-Games Logo" title="Visit TCY-Games! (Website under construction)"></a></p> -->
@@ -54,17 +70,11 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
 <br>
 <br>
 <br>
-<div style="max-width: 1500;
-    background-color: #e5d8f9;
-    border: 1px solid #ddd;
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+<div class = "section" style="background-color: #e5d8f9; border: 2px solid #d0c3d2;">
     <h6>
         <img src="TCY_Logo_TM.png" width="480" height="347" alt="Tracey and the Magic Brush Logo">
     </h6>
     <h1><a href="https://tcygames.itch.io/tracey-and-the-magic-brush" class="Download Demo" style="font-family: TcyScript;"> Tracey and the Magic Brush (WIP)</a></h1>
-    <ul>
         <h2>Original concept, project lead, C# programming, mechanical design, level design,<br>UI, character design, texture art, background art, sprite art, and animation</h2>
     <!-- </div> -->
     <p>
@@ -83,10 +93,81 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
         width="171" height="171" alt="CLICK HERE TO VISIT UPDATED GAME"
         title="CLICK HERE TO VISIT UPDATED GAME" loading="lazy">
     </a>
-    </ul>
     <br>
+    <div style="text-align: left; margin: 0 auto; max-width: 1000;">
+        Tracey and the Magic Brush is a single player 2D puzzle platformer with themes of art, color, paper, and nostalgia.<br><br>
+        The game follows the adventure of Tracey Lynes, a young aspiring artist who was cursed into her own paintings by a petty witch.<br><br>
+        The central standout mechanic is the ability to draw lines on the screen using a mouse or Nintendo Wii Remote cursor, and the physical properties of said line changes depending on the color used.<br><br>
+        This game was originally my college capstone project that I led. The game was voted best of the games at the Fall 2023 EECS 494 showcase. Even after graduating, I am still developing this game further as my personal studio project (TCY Games).<br><br>
+    </div>
+    <button type="button" class="collapsible" style="background-color: #9f7796; font-family: TcyScript;">Development Information</button>
+    <div class="content">
+        <button type="button" class="collapsible" style="width: 70%; background-color: #988193; font-family: TcyScript;">Technical Information</button>
+        <div class="content">
+            <ul style="display: table; text-align: left; margin: 0 auto;">
+                <li>Developed in the Unity Engine version 2022.</li>
+                <li>Art Assets created using paper & pencil, Paint.NET, and PenUP.</li>
+                <li>Platforms: Windows (x32 and x64), macOS, Linux.
+                    <ul><li>iOS and Android versions are planned for the future.</li></ul>
+                </li>
+                <li>Control methods: Mouse & Keyboard, Nintendo Wii Remote.
+                    <ul>
+                        <li>Touch controls planned for mobile versions.</li>
+                        <li>Potential of switch port utilizing only touch controls</li>
+                    </ul>
+                </li>
+                <li>Estimated duration of a play session: ~1 hour.</li>
+            </ul>
+            <br>
+        </div>
+        <br>
+        <hr>
+        <button type="button" class="collapsible" style="width: 70%; background-color: #988193; font-family: TcyScript;">Gameplay Overview and Loop</button>
+        <div class="content">
+            The game is divided into levels, with three subdivisions each.<br>
+            With the exceptions of the first and last level, levels are each themed around a color that is introduced to the player gradually before being given the ability to draw with it.<br><br>
+            The three subdivisions are formatted as such:
+            <ul style="display: table; text-align: left; margin: 0 auto;">
+                <li>1) Introduce the player to the mechanics of the level.</li>
+                <li>2) Give the player more control over these mechanics.</li>
+                <li>3) Test their skill and understanding of said mechanics through a challenging final section.</li>
+            </ul><br><br>
+
+            The gameplay loop is structured primarily around exploration, with a secondary focus on challenge, in a way that is comparable to "Celeste" by Extremely Okay Games.<br>
+            Whether learning new colors, discovering secret side-areas, or clearing a tough section, the player is pushed towards finding what fun new experience lies ahead, while also allowing for replayability though collectibles.<br>
+        </div>
+        <br>
+        <hr>
+        <button type="button" class="collapsible" style="width: 70%; background-color: #988193; font-family: TcyScript;">Project Scope</button>
+        <div class="content">
+            In the final release there will be at least around:
+            <ul style="display: table; text-align: left; margin: 0 auto;">
+                <li>Eight main story levels.</li>
+                <li>Short cutscenes between each level.</li>
+                <li>Eight challenge levels (corresponding to each main level).</li>
+                <li>Numerous collectibles and side areas in each level.</li>
+                <li>A gallery of concept art and bonus content unlockable through acquiring collectibles.</li>
+                <li>A sandbox area to mess around with the mechanics of the game.</li>
+            </ul><br><br>
+
+            <h2>Estimated completion: Q4 2025</h2>
+        </div>
+        <br>
+        <hr>
+        <button type="button" class="collapsible" style="width: 70%;">EECS 494 Postmortem</button>
+        <div class="content"  style="width: 80%; border: 1px solid #c0c0c0; margin: 0 auto;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"">
+            <h2><a href="EECS_494_p3_postmortem.pdf" target="_blank">Open in new tab</a></h2><br>
+            <embed src= "EECS_494_p3_postmortem.pdf" width="70%" height="600"> 
+        </div>
+        <br>
+    </div>
     <hr>
-    <button type="button" class="collapsible">Game Screenshots</button>
+    <button type="button" class="collapsible" style="background-color: #bf8fb4; font-family: TcyScript;">Images</button>
+    <div class="content">
+    <button type="button" class="collapsible" style="background-color: #e0acd4; font-family: TcyScript;">Game Screenshots</button>
     <div class="content">
         <img src="Screenshot6.jpg"  width="480" height="270" alt="Tracey and the Magic Brush Screenshot of gameplay">
         <img src="Screenshot2.jpg"  width="480" height="270" alt="Tracey and the Magic Brush Screenshot of gameplay">
@@ -97,8 +178,8 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
     </div>
     <br>
     <hr>
-    <button type="button" class="collapsible">Design documents</button>
-    <div class="content">
+    <button type="button" class="collapsible" style="background-color: #e0acd4; font-family: TcyScript; font-size: 64;">Design documents</button>
+    <div class="content" style="width: 100%;">
         <img src="TatMB_Concepts0.jpg"  height="500" alt="Tracey and the Magic Brush design page">
         <img src="TatMB_Concepts3.jpg"  height="500" alt="Tracey and the Magic Brush design page">
         <img src="TatMB_Concepts1.jpg"  height="500" alt="Tracey and the Magic Brush design page">
@@ -108,8 +189,8 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
     </div>
     <br>
     <hr>
-    <button type="button" class="collapsible">Sprites</button>
-    <div class="content">
+    <button type="button" class="collapsible" style="background-color: #e0acd4; font-family: TcyScript;">Sprites</button>
+    <div class="content" style="width: 100%;">
         <img src="Tracey_Idle_p3.png"  height="500" alt="Tracey Lynes Sprite">
         <img src="Tracey_Turned_Around_1.png"  height="500" alt="Tracey Lynes Sprite">
         <img src="Tracey_Fall_concept_1.png"  height="500" alt="Tracey Lynes Sprite">
@@ -121,29 +202,19 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
         <img src="Witch_Standing_concept_1_brighter.png"  height="500" alt="Petty Witch Sprite">
     </div>
     <br>
-    <hr>
-    <button type="button" class="collapsible">EECS 494 Postmortem</button>
-    <div class="content">
-        <embed src= "EECS_494_p3_postmortem.pdf" width="800" height="600"> 
     </div>
-    <br>
-    <br>
+    <br><br>
+
 </div>
 <br>
 <br>
 <br>
-<div style="max-width: 1500;
-background-color: #d0b79c;
-border: 1px solid #ddd;
-text-align: center;
-border-radius: 5px;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-<h6>
-    <img src="ERS_Cards_Logo_Temp.png" width="583" height="347" alt="Tracey and the Magic Brush Logo">
-</h6>
-<h1>Egyptian Rat Slap (WIP)</h1>
-<ul>
-    <h3>A fast paced spin on the traditional American card game all about matching, memory, and manhandling cards.
+<div class = "section" style="background-color: #d0b79c; border: 2px solid #c9c0b6;">
+    <h6>
+        <img src="ERS_Cards_Logo_Temp.png" width="583" height="347" alt="Tracey and the Magic Brush Logo">
+    </h6>
+    <h1>Egyptian Rat Slap (WIP)</h1>
+    <h3 style="margin: 0 auto;">A fast paced spin on the traditional American card game all about matching, memory, and manhandling cards.</h3>
         <br>
         <br>
         Using the lack of standardized rules to its advantage, players can mix and match various "slap conditions" to create exciting yet confusing gameplay where players struggle to keep up with the rules as they expand as the game progresses.
@@ -154,7 +225,7 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
         In story mode, you'll follow the tale of Burnie Decker, a man with a debt to pay and a score to settle.
         <br>
         Slap cards, hone your observation skills, and meet the large cast of other gamblers on your path to clear your debt and draw a path to freedom!
-    </h3>
+   
     <br>  
     <h2>
         Touch Concept (left) Keyboard concept (Right)
@@ -162,111 +233,94 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
     <iframe frameborder="0" src="https://itch.io/embed/2595120?border_width=5&amp;link_color=9e2835&amp;border_color=b86f50" width="216" height="175"><a href="https://tcygames.itch.io/ers-concept-touch">ERS touch concept by TCY Games</a></iframe>
     <iframe frameborder="0" src="https://itch.io/embed/2593645?border_width=5&amp;link_color=9e2835&amp;border_color=b86f50" width="216" height="175"><a href="https://tcygames.itch.io/ers-concept">ERS touch concept by TCY Games</a></iframe>
 
+    <br><br>
 </div>
 <br>
 <br>
 <br>
-<div style="max-width: 1500;
-background-color: #c3bacf;
-border: 1px solid #ddd;
-text-align: center;
-border-radius: 5px;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-
-<h1>Development Breakdowns</h1>
-<hr>
-<h2>Coding Concepts</h2>
-The Pub-Sub Design Pattern<br><br>
-<iframe width="640" height="360" allow="fullscreen;"
-    src="https://www.youtube.com/embed/o92VWN0S9nk?rel=0">
-</iframe>
-<br>
-<p>
-More coming soon
-</p>
-<hr>
-<h2>Design Concepts</h2>
-<p>
-    Tracey and the Magic Brush: "Teaching through familiarity"<br><br>
-    <embed src= "TCY Article - TatMB 1.pdf" width="800" height="600">
-</p>
-<br>
-<p>
-    ERS: "Designing engaging gameplay with only two buttons"<br><br>
-    <embed src= "TCY Article - ERS 1.pdf" width="800" height="600">
-</p>
-<p>
-    More coming soon
-</p>
-<hr>
-<h2>Art Concepts</h2>
-<p>
-Coming soon
-</p>
-
-
-</div>
-<br>
-<br>
-<br>
-<div style="max-width: 1500;
-background-color: #f1f1f1;
-border: 1px solid #ddd;
-border-radius: 5px;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-<h1>UMich EECS 494 FA 23 Projects</h1>
-
-
-<ul>
-<!-- <li><h2><a href="https://www.tcygames.com/" class="Download Demo"> Tracey and the Magic Brush (WIP)</a></h2></li>
-<p>
+<div class = "section" style="background-color: #c3bacf; border: 1px solid #ddd;">
+    <h1>Development Breakdowns</h1>
+    <hr>
+    <h2>Coding Concepts</h2>
+    The Pub-Sub Design Pattern<br><br>
     <iframe width="640" height="360" allow="fullscreen;"
-        src="https://www.youtube.com/embed/keyVc60hQKg?rel=0">
+        src="https://www.youtube.com/embed/o92VWN0S9nk?rel=0">
     </iframe>
-    <a href="https://tcygames.itch.io/tracey-and-the-magic-brush">
-        <img src="https://img.itch.zone/aW1nLzE0Njc0OTM3LnBuZw==/original/t4E9wW.png"
-        width="360" height="360" alt="CLICK HERE TO VISIT UPDATED GAME"
-        title="CLICK HERE TO VISIT UPDATED GAME" loading="lazy">
-    </a>
-</p> -->
+    <br>
+    <p>
+    More coming soon
+    </p>
+    <hr>
+    <h2>Design Concepts</h2>
 
-
-<!-- <iframe width="640" height="360" allow="fullscreen;"
-src="https://www.youtube.com/embed/s_GIE0LCHJ0?rel=0">
-</iframe> -->
-<br>
-<!-- <div>
-    <a href="Tcy_downloads.html" class="Download Demo"> Tcy downloads </a>
-</div> -->
-<!-- <br> -->
-<!-- <li><a href="https://daethtech.itch.io/tracey-and-the-magic-brush-gold">Tracey and the Magic Brush (Original concept version, UI not unoptimized for WebGL.)</a></li>
-<br> -->
-<li><a href="https://youtu.be/keyVc60hQKg?rel=0">Tracey and the Magic brush: EECS 494 build (Winner of the showcase vote)</a></li>
-<iframe frameborder="0" src="https://itch.io/embed/2406879?border_width=3" width="640" height="171"><a href="https://daethtech.itch.io/tracey-and-the-magic-brush-494-p3-version">Tracey and the Magic Brush (EECS 494 P3 Version) by TCY-Games</a></iframe>
-<br><a href="EECS_494_p3_postmortem.pdf" target=”_blank”>EECS 494 TatMB postmortem (pdf)</a>
-<br>
-<br>
-<li><a href="https://youtu.be/T-2QBHyg7cg?rel=0">TatMB (Concept build after 2 weeks of work)</a></li>
-<br>
-<button type="button" class="collapsible">Play the original concept! (HTML embed, stability unknown)</button>
-    <div class="content" style="text-align: left; color: white">
-        <iframe frameborder="0" src="https://itch.io/embed-upload/8909087?color=e5d8f9" allowfullscreen="" width="960" height="680"><a href="https://daethtech.itch.io/tracey-and-the-magic-brush-gold">Play Tracey and the Magic Brush (P2 Post-Gold build) on itch.io</a></iframe>
+    <button type="button" class="collapsible" style="font-size: 32;">Tracey and the Magic Brush: "Teaching through familiarity"</button>
+    <div class="content" style="width: 80%; border: 1px solid #ddd; margin: 0 auto;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <h2><a href="TCY Article - TatMB 1.pdf" target="_blank">Open in new tab</a></h2>
+        <br><br>
+        <embed src= "TCY Article - TatMB 1.pdf" width="90%" height="600" >
     </div>
-<br>
-<br>
-<iframe width="640" height="171" frameborder="0" src="https://itch.io/embed/2316061?linkback=true&amp;border_width=3"><a href="https://daethtech.itch.io/tracey-and-the-magic-brush-gold"></a>TatMB (Concept build after 2 weeks of work)</iframe>
-<!-- <li><a href="https://youtu.be/T-2QBHyg7cg">Tracey and the Magic Brush Post Gold Build Gameplay Showcase</a></li> -->
-<br>
-<br>
-<li><a href="https://daethtech.itch.io/starspark">StarSpark (Unity Remaster of NES Metroid with a custom level)</a></li>
-<iframe frameborder="0" src="https://itch.io/embed/2285150?linkback=true&amp;border_width=3" width="640" height="171"><a href="https://daethtech.itch.io/starspark"></a>EECS 494 P1: StarSpark by daethtech</iframe></ul>
+    <br>
+    <br>
+    <button type="button" class="collapsible" style="font-size: 32;">ERS: "Designing engaging gameplay with only two buttons"</button>
+    <div class="content"  style="width: 80%; border: 1px solid #ddd; margin: 0 auto;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <h2><a href="TCY Article - ERS 1.pdf" target="_blank">Open in new tab</a></h2>
+        <br><br>
+        <embed src= "TCY Article - ERS 1.pdf" width="70%" height="600">
+    </div>
+    <p>
+        More coming soon
+    </p>
+    <hr>
+    <h2>Art Concepts</h2>
+    <p>
+    Coming soon
+    </p>
 
-</div><br>
-<hr>
-<h1>Other notable coding experience</h1>
+
+    <br><br>
+</div>
 <br>
+<br>
+<br>
+<div class = "section" style="background-color: #f1f1f1; border: 1px solid #ddd; text-align: center; margin: 0 auto;">
+    <h1>UMich EECS 494 FA 23 Projects</h1>
+    <ul style="width: 80%; text-align: left; margin: 0 auto;">
+        <li><a href="https://youtu.be/keyVc60hQKg?rel=0">Tracey and the Magic brush: EECS 494 build (Winner of the showcase vote)</a></li>
+        <iframe frameborder="0" src="https://itch.io/embed/2406879?border_width=3" width="100%" height="171"><a href="https://daethtech.itch.io/tracey-and-the-magic-brush-494-p3-version">Tracey and the Magic Brush (EECS 494 P3 Version) by TCY-Games</a></iframe>
+        <br><a href="EECS_494_p3_postmortem.pdf" target=”_blank”>EECS 494 TatMB postmortem (pdf)</a>
+        <br>
+        <br>
+        <li><a href="https://youtu.be/T-2QBHyg7cg?rel=0">TatMB (Concept build after 2 weeks of work)</a></li>
+        <br>
+        <button type="button" class="collapsible" style="font-size: 2.25em; font-family: TcyScript; width: 100%; margin: 0 auto;">Play the original concept! (HTML embed, stability unknown, Desktop only)</button>
+            <div class="content" style="text-align: center; width: 100%; margin: 0 auto; color: white">
+                <iframe frameborder="0" src="https://itch.io/embed-upload/8909087?color=e5d8f9" allowfullscreen="" width="960" height="680"><a href="https://daethtech.itch.io/tracey-and-the-magic-brush-gold">Play Tracey and the Magic Brush (P2 Post-Gold build) on itch.io</a></iframe>
+            </div>
+        <br>
+        <br>
+        <iframe width="100%" height="171" frameborder="0" src="https://itch.io/embed/2316061?linkback=true&amp;border_width=3"><a href="https://daethtech.itch.io/tracey-and-the-magic-brush-gold"></a>TatMB (Concept build after 2 weeks of work)</iframe>
+        <!-- <li><a href="https://youtu.be/T-2QBHyg7cg">Tracey and the Magic Brush Post Gold Build Gameplay Showcase</a></li> -->
+        <br>
+        <br>
+        <li><a href="https://daethtech.itch.io/starspark">StarSpark (Unity Remaster of NES Metroid with a custom level)</a></li>
+        <iframe frameborder="0" src="https://itch.io/embed/2285150?linkback=true&amp;border_width=3" width="100%" height="171"><a href="https://daethtech.itch.io/starspark"></a>EECS 494 P1: StarSpark by daethtech</iframe>
+        <br><br>
+    </ul>
+
+</div>
+<br>
+<br>
+<br>
+<div class = "section" style="background-color: #eeeeee; border: 1px solid #ddd; text-align: center; margin: 0 auto;">
+<h1>Other notable coding experience</h1>
 <h2>C++ Projects/Experience</h2>
-<ul>
+<ul style="width: 75%; text-align: left; margin: 0 auto;">
 <li><b><a href="https://quick-lint-js.com/contribute/authors/#:~:text=daethtech%3B%20https%3A//github.com/daethtech%3B%20signed%20CLA%2Dv1.md">quick-lint-js:</a> (Contribution, 2023)</b>
     Contributed to quick-lint-js, an open-source JavaScript linter coded in C++ created by <a href="https://strager.net/">strager</a>, by adding additional diagnostics and documentation.
 </li>
@@ -276,8 +330,10 @@ src="https://www.youtube.com/embed/s_GIE0LCHJ0?rel=0">
 <li><b>Treasure Hunt (EECS 281, 2022):</b> A program where when given a "map" file, a pirate ship will search and attempt to route a path to the treasure using breadth first search (BFS) and depth first search (DFS).<br> (I attempted to turn it into more of a game, but was never finished)</li>
 
 <!-- <li><b>How many fingers... (Independent, 2023):</b> A goofy rendition of the game "how many fingers am I holding up?" where the rules and win conditions progressively become more and more complex and convuluted over time. (Unfinished)</li> -->
-
+<br><br>
 </ul>
+</div>
+
 
 <br>
 <br>
@@ -288,6 +344,9 @@ src="https://www.youtube.com/embed/s_GIE0LCHJ0?rel=0">
 <br>
 <br>
 
+<h4 style="text-align: center;">
+    <footer>&copy; Copyright 2023 - 2024 Grant Williams</footer>
+</h4>
 
 <script>
     var coll = document.getElementsByClassName("collapsible");
